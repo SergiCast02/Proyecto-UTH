@@ -329,6 +329,7 @@ h1 a img {
 	padding: 32px 80px 30px;
 	margin-bottom: 23px;
 	background: url(../images/cont_bg.png) 0 0 repeat;
+	border-radius: 10px;
 }
 
 .page1 .content {
