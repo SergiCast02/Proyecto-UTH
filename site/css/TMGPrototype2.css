@@ -32,7 +32,7 @@
 }
 
 #descrHolder {
-	width: 50% !important;
+	width: 61.5% !important;
 	opacity: 0.86;
 }
 
@@ -42,7 +42,7 @@
 	left: 50%;
 	margin-left: -470px;
 	padding: 0;
-	width: 460px;
+	width: 600px;				/*Ancho de espacio de los botones de productos*/
 }
 
 #TMGPrototype2 #categoryList>li {
@@ -50,6 +50,7 @@
 	position: relative;
 	float: left;
 	margin-right: 10px;
+	margin-bottom: 10px;		/*Separacion vertical entre botones de segunda linea*/
 }
 
 #TMGPrototype2 #categoryList>li>img {
@@ -73,7 +74,7 @@
 
 #TMGPrototype2 #categoryList>li>.setName:hover,
 #TMGPrototype2 #categoryList>li.currSet>.setName {
-	background: #ac2135;
+	background: #7B1317;
 	color: #fff;
 }
 
@@ -84,7 +85,7 @@
 #TMGPrototype2 #controlHolder {
 	position: absolute;
 	left: 50%;
-	margin-left: -52px;
+	margin-left: 150px;				/*Movimiento lateral de los botones < > */
 	width: 115px;
 	z-index: 999;
 	display: inline-block;
@@ -95,7 +96,7 @@
 	height: 35px;
 	background: url(../images/prevnext.png) -1px -1px no-repeat #edecec;
 	float: left;
-	border: 1px solid #ac2135;
+	border: 1px solid #7B1317;
 	cursor: pointer;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -109,7 +110,7 @@
 	float: left;
 	margin-left: 5px;
 	cursor: pointer;
-	border: 1px solid #ac2135;
+	border: 1px solid #7B1317;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
 	-webkit-transition: 0.5s ease;
@@ -117,7 +118,7 @@
 
 #TMGPrototype2 #controlHolder>._prevButton:hover,
 #TMGPrototype2 #controlHolder>._nextButton:hover {
-	background-color: #ac2135 !important;
+	background-color: #7B1317 !important;
 }
 
 #previewHolder {
