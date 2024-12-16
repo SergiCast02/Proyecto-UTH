@@ -82,6 +82,17 @@ p {
 	font-size: 20px;
 	margin-bottom: 15px;
 	font-style: italic;
+	font-weight: bold;
+}
+
+.p3{
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 20px;
+	margin-bottom: 15px;
+	font-style: italic;
+}
+
+.p3 span{
 	font-weight: bolder;
 }
 
