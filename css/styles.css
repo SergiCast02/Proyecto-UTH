@@ -8,7 +8,7 @@ body {
 header {
   background-color: #7B1317;
   color: white;
-  padding: 0.2em 0.5em;   /*espaciado altura, espaciado lateral*/
+  padding: 0.2em 0.5em; /*espaciado altura, espaciado lateral*/
 }
 
 .navbar {
@@ -28,7 +28,7 @@ header {
 
 .nav-list li {
   text-align: center;
-  padding: 0 0.4em; 
+  padding: 0 0.4em;
   box-sizing: border-box; /* Añadido para incluir el relleno y el borde en el tamaño total */
 }
 
@@ -57,90 +57,125 @@ header {
   width: 30px;
 }
 
-.social-icons a:hover {
-  color: #8E5925;
-}
 
 .logo img {
   max-height: 70px;
 }
 
-/* Carrusel de Productos */ 
-.carousel-container { 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  position: relative; 
-  width: 80%; /*ajusta el ancho del contenedor*/
-  margin: 0 auto; /*centra el contenedor horizontalmente*/
-} 
-
-.carousel { 
-  display: flex; 
-  overflow: hidden; 
-  width: 80%; 
-} 
-
-.carousel-item { 
-  flex: 0 0 50%; /* Muestra dos productos a la vez con espacio*/ 
-  margin: 10px; 
-  background-color: #f0f0f0; 
-  text-align: center; 
-  border-radius: 5px; 
-  position: relative;
-  box-sizing: border-box;
-  transition: transform 0.5s ease;
-} 
-
-.carousel-item img {
-  border-radius: 5px 5px 0 0;
+/* Carrusel de Productos */
+.carousel-background { 
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */ 
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */ 
+  background-position: center 20%; /* Ajusta la posición de la imagen de fondo */ 
 }
 
-.product-description{
+.carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item {
+  margin: 1%;
+  background-color: #FCF6B6;
+  text-align: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0px, 130px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-item img {
+  max-height: 280px;
+  border-radius: 5px;
+  margin-left: 70%;
+  margin-top: 5%;
+  opacity: 1;
+}
+
+.product-description {
   padding: 10px;
 }
 
-.carousel-button { 
-  background: none; 
-  border: none; 
-  font-size: 2em; 
-  cursor: pointer; 
-  position: absolute; 
-  top: 50%; 
-  transform: translateY(-50%); 
-  color: #7B1317; 
-} 
+/* Estilos específicos de Slick Carousel */
+.slick-prev:before, .slick-next:before{
+  content: '';
+}
 
-.prev { 
-  left: 10px; 
-} 
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;  /*asegura que las flechas esten encima de otros elementos */
+  border: none;
+  font-size: 2em;
+  color: #7B1317;
+  background-color: transparent;
+  opacity: 1;
+  transition: color 0.3s;
+}
 
-.next { 
-  right: 10px;
+.slick-prev:hover, .slick-next:hover,
+.slick-prev:focus, .slick-next:focus { 
+  color: #CB9A3D; /* Cambia el color de las flechas al hacer hover */ 
+}
+
+.slick-prev{
+  left: 5%;  /* Ajusta la posición a la izquierda del contenedor */
+}
+
+.slick-next{
+  right: 5%; /* Ajusta la posición a la derecha del contenedor */
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 15px; /* Ajusta la posición de los puntos */
+  width: 100%;
+  display: flex !important; /* Asegura que los puntos sean visibles */
+  justify-content: center; /* Centra los puntos horizontalmente */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  margin: 5px 5px; /* Espaciado entre los botones del carrusel*/
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #7B1317; /* Color de los puntos */
+  opacity: 0.8;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #CB9A3D; /* Color de los puntos activos */
+  opacity: 1;
 }
 
 
 /* Media Queries */
 
-/* Para pantallas entre 600px y 900px de ancho */ 
-@media (min-width: 601px) and (max-width: 900px) { 
-  .navbar { 
-    flex-direction: column; 
-  } 
-  
-  .nav-list { 
-    text-align: center; /* Centra los elementos en pantallas intermedias */ 
-  } 
-  
-  .nav-list li { 
-    flex: 1 1 50%; /* Cada elemento ocupa el 50% del ancho en pantallas intermedias */ 
-    margin-bottom: 0.3em; 
-    text-align: center; 
-  } 
-  
-  .logo { 
-    margin-bottom: 1em; 
-  } 
+/* Para pantallas entre 600px y 900px de ancho */
+@media (min-width: 601px) and (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-list {
+    text-align: center; /* Centra los elementos en pantallas intermedias */
+  }
+
+  .nav-list li {
+    flex: 1 1 50%; /* Cada elemento ocupa el 50% del ancho en pantallas intermedias */
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 1em;
+  }
 }
 
 /* Para pantallas de máximo 600px de ancho */

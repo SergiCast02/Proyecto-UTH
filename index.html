@@ -4,8 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barra de Navegación</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
@@ -29,39 +33,36 @@
   </header>
   <main>
     <!-- Carrusel de Productos --> 
-    <div class="carousel-container">
-        <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
-                <div class="product-description">
-                    <h2>Producto 1</h2>
-                    <p>Descripcion del producto # 1</p>
-                </div>
+    <div class="carousel-background">
+     <div class="carousel"> 
+        <div class="carousel-item" data-bg="vinos_todos.jpg"> 
+            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
+            <div class="product-description"> 
+                <h2>Producto 1</h2> 
+                <p>Descripción del producto #1</p> 
             </div> 
-            <div class="carousel-item">
-                <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
-                <div class="product-description">
-                    <h2>Producto 2</h2>
-                    <p>Descripcion del producto # 2</p>
-                </div>
-            </div>   
-            <div class="carousel-item">
-                <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
-                <div class="product-description">
-                    <h2>Producto 3</h2>
-                    <p>Descripcion del producto # 3</p>
-                </div>
-            </div>   
-            <div class="carousel-item">
-                <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
-                <div class="product-description">
-                    <h2>Producto 4</h2>
-                    <p>Descripcion del producto # 4</p>
-                </div>
-            </div>   
+        </div> 
+        <div class="carousel-item" data-bg="mom_column.jpeg"> 
+            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
+            <div class="product-description"> 
+                <h2>Producto 2</h2> 
+                <p>Descripción del producto #2</p> 
+            </div> 
+        </div> 
+        <div class="carousel-item" data-bg="girl_cup_1.jpeg">
+            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
+            <div class="product-description"> 
+                <h2>Producto 3</h2> 
+                <p>Descripción del producto #3</p> 
+            </div> 
+        </div> 
+        <div class="carousel-item"> 
+            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
+            <div class="product-description"> 
+                <h2>Producto 4</h2> 
+                <p>Descripción del producto #4</p> 
+            </div> 
         </div>
-        <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button> 
     </div>
   </main>
   <footer>
@@ -75,6 +76,8 @@
         <a href="https://www.linkedin.com" target="_blank"><img src="/images/in_color_icon.png" alt="linkedin-logo"></a>
      </div>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>

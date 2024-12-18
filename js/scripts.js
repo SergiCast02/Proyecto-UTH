@@ -1,29 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    const itemCount = items.length;
-    const visibleItems = 2; // Número de elementos visibles a la vez
-    let currentIndex = 0;
-  
-    function updateCarousel() {
-      const offset = -currentIndex * 100 / visibleItems;
-      carousel.style.transition = 'transform 0.5s ease'; // Añade una transición suave
-      carousel.style.transform = `translateX(${offset}%)`;
-    }
-  
-    prevButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? itemCount - visibleItems : currentIndex - 1;
-      updateCarousel();
-    });
-  
-    nextButton.addEventListener('click', () => {
-      currentIndex = (currentIndex === itemCount - visibleItems) ? 0 : currentIndex + 1;
-      updateCarousel();
-    });
-  
-    updateCarousel();
+$(document).ready(function(){
+  $('.carousel').slick({
+    infinite: true,
+    dots: true,
+    speed: 700,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
   });
-  
-  
+
+  // Cambiar la imagen de fondo del contenedor del carrusel al cambiar el producto visible
+  $('.carousel').on('afterChange', function(event, slick, currentSlide){
+    var currentSlideElement = $(slick.$slides[currentSlide]);
+    var newBackground = currentSlideElement.data('bg');
+    $('.carousel-background').css('background-image', 'url(images/' + newBackground + ')');
+  });
+});
