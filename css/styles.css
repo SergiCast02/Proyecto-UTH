@@ -1,0 +1,165 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #7B1317;
+  color: white;
+  padding: 0.2em 0.5em;   /*espaciado altura, espaciado lateral*/
+}
+
+.navbar {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Añadido para permitir el ajuste de los elementos */
+}
+
+.nav-list li {
+  text-align: center;
+  padding: 0 0.4em; 
+  box-sizing: border-box; /* Añadido para incluir el relleno y el borde en el tamaño total */
+}
+
+.nav-list a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 0.5em;
+  background-color: #CB9A3D;
+  border: 2px solid #CB9A3D;
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s; /* Corrección del ; faltante */
+}
+
+.nav-list a:hover {
+  background-color: #8E5925;
+  border-color: #8E5925;
+}
+
+.social-icons a img {
+  margin: 0 1em;
+  font-size: 0.5em;
+  transition: color 0.3s;
+  height: 30px;
+  width: 30px;
+}
+
+.social-icons a:hover {
+  color: #8E5925;
+}
+
+.logo img {
+  max-height: 70px;
+}
+
+/* Carrusel de Productos */ 
+.carousel-container { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+  width: 80%; /*ajusta el ancho del contenedor*/
+  margin: 0 auto; /*centra el contenedor horizontalmente*/
+} 
+
+.carousel { 
+  display: flex; 
+  overflow: hidden; 
+  width: 80%; 
+} 
+
+.carousel-item { 
+  flex: 0 0 50%; /* Muestra dos productos a la vez con espacio*/ 
+  margin: 10px; 
+  background-color: #f0f0f0; 
+  text-align: center; 
+  border-radius: 5px; 
+  position: relative;
+  box-sizing: border-box;
+  transition: transform 0.5s ease;
+} 
+
+.carousel-item img {
+  border-radius: 5px 5px 0 0;
+}
+
+.product-description{
+  padding: 10px;
+}
+
+.carousel-button { 
+  background: none; 
+  border: none; 
+  font-size: 2em; 
+  cursor: pointer; 
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  color: #7B1317; 
+} 
+
+.prev { 
+  left: 10px; 
+} 
+
+.next { 
+  right: 10px;
+}
+
+
+/* Media Queries */
+
+/* Para pantallas entre 600px y 900px de ancho */ 
+@media (min-width: 601px) and (max-width: 900px) { 
+  .navbar { 
+    flex-direction: column; 
+  } 
+  
+  .nav-list { 
+    text-align: center; /* Centra los elementos en pantallas intermedias */ 
+  } 
+  
+  .nav-list li { 
+    flex: 1 1 50%; /* Cada elemento ocupa el 50% del ancho en pantallas intermedias */ 
+    margin-bottom: 0.3em; 
+    text-align: center; 
+  } 
+  
+  .logo { 
+    margin-bottom: 1em; 
+  } 
+}
+
+/* Para pantallas de máximo 600px de ancho */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-list {
+    text-align: center; /* Centra los elementos en pantallas pequeñas */
+  }
+
+  .nav-list li {
+    flex: 1 1 50%; /* Cada elemento ocupa el 50% del ancho en pantallas pequeñas */
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 1em;
+  }
+}
