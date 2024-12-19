@@ -60,6 +60,7 @@ header {
 
 .logo img {
   max-height: 70px;
+  border-radius: 3px;
 }
 
 /* Carrusel de Productos */
@@ -73,23 +74,26 @@ header {
   display: flex;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
+
 .carousel-item {
+  flex: 0 0 48%;
   margin: 1%;
   background-color: #FCF6B6;
   text-align: center;
   border-radius: 5px;
   box-sizing: border-box;
-  margin: 0px, 130px;
   background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  font-size: 1em;
 }
 
 .carousel-item img {
   max-height: 280px;
   border-radius: 5px;
-  margin-left: 70%;
-  margin-top: 5%;
+  margin: auto;
   opacity: 1;
 }
 
@@ -108,24 +112,24 @@ header {
   transform: translateY(-50%);
   z-index: 1;  /*asegura que las flechas esten encima de otros elementos */
   border: none;
-  font-size: 2em;
-  color: #7B1317;
+  font-size: 3em;
+  color: #CB9A3D;
   background-color: transparent;
   opacity: 1;
   transition: color 0.3s;
 }
 
 .slick-prev:hover, .slick-next:hover,
-.slick-prev:focus, .slick-next:focus { 
-  color: #CB9A3D; /* Cambia el color de las flechas al hacer hover */ 
+.slick-prev:focus, .slick-next:focus {
+  color: #7B1317;  /* Cambia el color de las flechas al hacer hover */ 
 }
 
 .slick-prev{
-  left: 5%;  /* Ajusta la posición a la izquierda del contenedor */
+  left: 2%;  /* Ajusta la posición a la izquierda del contenedor */
 }
 
 .slick-next{
-  right: 5%; /* Ajusta la posición a la derecha del contenedor */
+  right: 2%; /* Ajusta la posición a la derecha del contenedor */
 }
 
 .slick-dots {
@@ -176,6 +180,10 @@ header {
   .logo {
     margin-bottom: 1em;
   }
+
+  .carousel-item h2{  /* corrige el tamaño del titulo de producto */
+    font-size: 1.1em;
+  }
 }
 
 /* Para pantallas de máximo 600px de ancho */
@@ -196,5 +204,9 @@ header {
 
   .logo {
     margin-bottom: 1em;
+  }
+
+  .carousel-item h2{ /* corrige el tamaño del titulo de producto */
+    font-size: 1.2em;
   }
 }
