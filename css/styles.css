@@ -161,7 +161,7 @@ header {
 
 /* Sección de Historia */
 .section-history {
-  background-color: #fdf8f2; /* Fondo claro */
+  background-color: #f9f9f9; /* Fondo claro */
   padding: 30px 0 70px 0;
   position: relative;
   z-index: 2;
@@ -260,6 +260,83 @@ header {
   font-weight: normal; /* Dirección en texto normal */
 }
 
+/* Sección de Eventos */
+.section-events {
+  background-color: #f9f9f9; /* Fondo claro */
+  padding: 40px 0;
+}
+
+.section-events .container {
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centramos el contenedor */
+  text-align: center;
+}
+
+.section-events h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.event-container { 
+  background-color: white; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 40px; 
+  padding: 20px;
+  max-width: 85%;
+  margin: 0 auto 40px auto; 
+}
+
+.event {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.event-image,
+.event-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.event-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.event-details {
+  text-align: left;
+}
+
+.event-details h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.event-details p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Eventos Próximos */
+.upcoming-event .event-image {
+  order: 1;
+}
+
+.upcoming-event .event-details {
+  order: 2;
+}
+
+/* Eventos Recientes */
+.recent-event .event-image {
+  order: 2;
+}
+
+.recent-event .event-details {
+  order: 1;
+}
 
 /* Media Queries */
 
@@ -311,6 +388,25 @@ header {
     font-size: 1.1em;
   }
 
+  .section-events .container { 
+    padding: 0 20px; /* Ajusta el padding para pantallas intermedias */ 
+  } 
+  
+  .section-events h1 { 
+    font-size: 2em; 
+  } 
+  
+  .event-details h2 { 
+    font-size: 1.6em; 
+  } 
+  
+  .event-details p { 
+    font-size: 0.95em; 
+  } 
+  
+  .event { 
+    flex-direction: row; 
+  }
 
 }
 
@@ -360,5 +456,21 @@ header {
 
   .section-compras li {
     font-size: 1em;
+  }
+
+  .event {
+    flex-direction: column;
+  }
+
+  .event-details {
+    text-align: center;
+  }
+
+  .event-details h2 {
+    font-size: 1.5em;
+  }
+
+  .event-details p {
+    font-size: 0.9em;
   }
 }
