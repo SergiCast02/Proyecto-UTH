@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos generales de la página*/
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,12 +8,12 @@ body {
 header {
   background-color: #7B1317;
   color: white;
-  padding: 0.2em 0.5em; /*espaciado altura, espaciado lateral*/
+  padding: 0.2em 0.5em; /*espaciado altura, espaciado lateral de los elementos*/
 }
 
 .navbar {
   display: flex;
-  align-items: center; /* Alinea los elementos verticalmente al centro */
+  align-items: center; 
   justify-content: space-between;
   padding: 0.5em;
 }
@@ -41,7 +41,7 @@ header {
   background-color: #CB9A3D;
   border: 2px solid #CB9A3D;
   border-radius: 5px;
-  transition: background-color 0.3s, border-color 0.3s; /* Corrección del ; faltante */
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .nav-list a:hover {
@@ -101,7 +101,7 @@ header {
   padding: 10px;
 }
 
-/* Estilos específicos de Slick Carousel */
+/* Estilos específicos de la libreria Slick Carousel */
 .slick-prev:before, .slick-next:before{
   content: '';
 }
@@ -125,16 +125,16 @@ header {
 }
 
 .slick-prev{
-  left: 2%;  /* Ajusta la posición a la izquierda del contenedor */
+  left: 2%;  /* Ajusta la posición de la flecha a la izquierda del contenedor */
 }
 
 .slick-next{
-  right: 2%; /* Ajusta la posición a la derecha del contenedor */
+  right: 2%; /* Ajusta la posición de la flecha a la derecha del contenedor */
 }
 
 .slick-dots {
   position: absolute;
-  bottom: 15px; /* Ajusta la posición de los puntos */
+  bottom: 15px; /* Ajusta la posición de los puntos debajo del carrusel */
   width: 100%;
   display: flex !important; /* Asegura que los puntos sean visibles */
   justify-content: center; /* Centra los puntos horizontalmente */
@@ -168,7 +168,7 @@ header {
 
 .section-history .container {
   max-width: 800px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centramos el contenedor */
+  margin: 0 auto; /* Centrado del contenedor */
   text-align: center;
 }
 
@@ -191,7 +191,7 @@ header {
   margin-bottom: 15px;
 }
 
-/* Enlace para regresar al inicio */
+/* CSS del Enlace para regresar al inicio (se vea como boton) */
 .return-top {
   display: block;
   background-color: #CB9A3D;
@@ -255,10 +255,6 @@ header {
   margin-bottom: 15px;
 }
 
-.section-compras li span {
-  font-weight: normal; /* Dirección en texto normal */
-}
-
 /* Sección de Eventos */
 .section-events {
   background-color: #f9f9f9; /* Fondo claro */
@@ -319,7 +315,7 @@ header {
   margin-bottom: 0;
 }
 
-/* Eventos Próximos */
+/* Eventos Próximos - ordena la imagen a la derecha y el texto a la izquierda*/
 .upcoming-event .event-image {
   order: 1;
 }
@@ -328,7 +324,7 @@ header {
   order: 2;
 }
 
-/* Eventos Recientes */
+/* Eventos Recientes - ordena la imagen a la izquierda y el texto a la derecha*/
 .recent-event .event-image {
   order: 2;
 }
@@ -351,7 +347,7 @@ header {
   position: relative;
   z-index: 2; /* Asegura que el contenido esté sobre el fondo con opacidad */
   max-width: 1200px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centramos el contenedor */
+  margin: 0 auto; /* Centrado del contenedor */
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -399,7 +395,7 @@ header {
 
 .section-contact .container {
   max-width: 1200px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centramos el contenedor */
+  margin: 0 auto; /* Centrado del contenedor */
   text-align: center;
 }
 
