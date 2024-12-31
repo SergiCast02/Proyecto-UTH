@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barra de Navegación</title>
-  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Enviar email con el formulario de contacto -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({
+      publicKey: 'JRO0no14cW0eO5DD-',
+    });
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('form-contacto').addEventListener('submit', function (event) {
+        event.preventDefault();
+        // these IDs from the previous steps
+        emailjs.sendForm('service_r5s4i9d', 'template_84ppthr', this)
+          .then(() => {
+            alert('ENVIADO! NOSOTROS NOS PONDREMOS EN CONTACTO CONTIGO CUANDO LEAMOS TU MENSAJE.');
+          }, (error) => {
+            alert('ALGO FALLÓ...', error);
+          });
+      });
+    }
+  </script>
 </head>
+
 <body>
   <header>
     <nav class="navbar">
-        <div class="logo"> 
-            <a href="#home"><img src="/images/logo_nerak_razan.jpeg" alt="Logo de la Empresa"></a> 
-        </div>
+      <div class="logo">
+        <a href="#home"><img src="/images/logo_nerak_razan.jpeg" alt="Logo de la Empresa"></a>
+      </div>
       <ul class="nav-list">
         <li><a href="#home">Productos</a></li>
         <li><a href="#historia">Historia</a></li>
@@ -25,65 +49,71 @@
         <li><a href="#restaurante">Restaurante</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
-      <div class="social-icons"> 
+      <div class="social-icons">
         <a href="https://facebook.com" target="_blank"><img src="/images/fb_color_icon.png" alt="facebook-new"></a>
         <a href="https://instagram.com" target="_blank"><img src="/images/ig_color_icon.png" alt="instagram-logo"></a>
         <a href="https://wa.me/95554023" target="_blank"><img src="/images/wa_color_icon.png" alt="whatsapp-logo"></a>
-     </div>
+      </div>
     </nav>
   </header>
   <main>
-    <!-- Carrusel de Productos --> 
+    <!-- Carrusel de Productos -->
     <div class="carousel-background">
-      <div class="carousel"> 
-        <div class="carousel-item" data-bg="vino_dia_serving.jpeg"> 
-            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
-            <div class="product-description"> 
-                <h2>Vino de Nance</h2> 
-                <p>El Nance una fruta diminuta y amarillenta, también conocida como changunga, de sabor ácido y aroma fuerte, se convierte en un vino perfecto que refresca el paladar a gusto</p> 
-            </div> 
-        </div> 
-        <div class="carousel-item" data-bg="mom_column.jpeg"> 
-            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
-            <div class="product-description"> 
-                <h2>Vino de Marañón</h2> 
-                <p>Del marañón hacemos uso del seudofruto, este tiene un sabor astringente y al mismo tiempo ácido, pero cuando se maneja el nivel adecuado de azúcar y con el tiempo de fermentación correcto, se convierte en uno de nuestros vinos exquisitos por la explosión de sabor y olor al verterlo en la copa y degustarlo.</p> 
-            </div> 
-        </div> 
+      <div class="carousel">
+        <div class="carousel-item" data-bg="vino_dia_serving.jpeg">
+          <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
+          <div class="product-description">
+            <h2>Vino de Nance</h2>
+            <p>El Nance una fruta diminuta y amarillenta, también conocida como changunga, de sabor ácido y aroma fuerte, se convierte en un vino perfecto que refresca el paladar a gusto</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bg="mom_column.jpeg">
+          <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
+          <div class="product-description">
+            <h2>Vino de Marañón</h2>
+            <p>Del marañón hacemos uso del seudofruto, este tiene un sabor astringente y al mismo tiempo ácido, pero cuando se maneja el nivel adecuado de azúcar y con el tiempo de fermentación
+              correcto, se convierte en uno de nuestros vinos exquisitos por la explosión de sabor y olor al verterlo en la copa y degustarlo.</p>
+          </div>
+        </div>
         <div class="carousel-item" data-bg="girl_cup_bottle_1.jpeg">
-            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina"> 
-            <div class="product-description"> 
-                <h2>Vino de Mamón</h2> 
-                <p>El mamón, mamoncillo o quenepa, fruto exótico que con su sabor semiácido y su pulpa traslucida que al complementarlo con el azúcar y reservando por más de un año se convierte en uno de los vinos más exquisitos y favoritos.</p> 
-            </div> 
-        </div> 
+          <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
+          <div class="product-description">
+            <h2>Vino de Mamón</h2>
+            <p>El mamón, mamoncillo o quenepa, fruto exótico que con su sabor semiácido y su pulpa traslucida que al complementarlo con el azúcar y reservando por más de un año se convierte en uno de
+              los vinos más exquisitos y favoritos.</p>
+          </div>
+        </div>
         <div class="carousel-item" data-bg="copas_todos.jpg">
-            <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
-            <div class="product-description">
-                <h2>Vino de Carambola</h2>
-                <p>La Carambola conocida como fruta estrella o averrhoa, por ser altamente jugosa, con poca fibra y ácida, hace que quienes degustan el vino se sientan seducidas por el sabor ya que es uno de nuestros vinos más suaves y poco dulces.</p> 
-            </div> 
+          <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
+          <div class="product-description">
+            <h2>Vino de Carambola</h2>
+            <p>La Carambola conocida como fruta estrella o averrhoa, por ser altamente jugosa, con poca fibra y ácida, hace que quienes degustan el vino se sientan seducidas por el sabor ya que es uno
+              de nuestros vinos más suaves y poco dulces.</p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="mom_show.jpeg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
-              <h2>Vino de Licha</h2>
-              <p>La Licha o Mamón chino, Rambután o Achotillo fruta tropical exótica, su pulpa jugosa y sabor dulce hace que nuestro Vino de Licha tenga un intenso sabor y preserve el aroma del fruto.</p> 
-          </div> 
+            <h2>Vino de Licha</h2>
+            <p>La Licha o Mamón chino, Rambután o Achotillo fruta tropical exótica, su pulpa jugosa y sabor dulce hace que nuestro Vino de Licha tenga un intenso sabor y preserve el aroma del fruto.
+            </p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="bottles_cubo_2.jpeg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
             <h2>Vino de Mora</h2>
-            <p>La mora un pequeño fruto compuesto por varias drupas, que después del proceso de fermentación adquiere una fragancia exquisita y un sabor estupendo donde se mantiene la esencia del fruto. Convirtiéndose así en un vino semidulce dispuesto a complacer paladares exigentes.</p>
-          </div> 
+            <p>La mora un pequeño fruto compuesto por varias drupas, que después del proceso de fermentación adquiere una fragancia exquisita y un sabor estupendo donde se mantiene la esencia del
+              fruto. Convirtiéndose así en un vino semidulce dispuesto a complacer paladares exigentes.</p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="vino_dia_comparte_smile.jpeg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
             <h2>Vino de Mandarina</h2>
-            <p>La Mandarina un cítrico que encanta por su color, sabor y aroma… este ya fermentando, con la acidez del fruto y con el toque ideal de azúcar por más de un año se convierte en un vino delicado, exquisito al paladar.</p>
-          </div> 
+            <p>La Mandarina un cítrico que encanta por su color, sabor y aroma… este ya fermentando, con la acidez del fruto y con el toque ideal de azúcar por más de un año se convierte en un vino
+              delicado, exquisito al paladar.</p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="old_bottles_v.jpg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
@@ -92,28 +122,31 @@
             <p>Una mezcla perfecta entre mandarina y ovo, este último conocido también como
               hobo, ciruelo, jocota o jobo. Ambos frutos se mezclan por más de dos años para
               dar una explosión de sabor</p>
-          </div> 
+          </div>
         </div>
         <div class="carousel-item" data-bg="vino_dia.jpeg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
             <h2>Vino de Carambolapiña</h2>
-            <p>La Carambola conocida como fruta estrella o averrhoa este al mezclarlo con la Piña solidifican su sabor, textura y aroma surgiendo un vino dulce, pero con la llama explosiva en cada copa que degustas.</p>
-          </div> 
+            <p>La Carambola conocida como fruta estrella o averrhoa este al mezclarlo con la Piña solidifican su sabor, textura y aroma surgiendo un vino dulce, pero con la llama explosiva en cada
+              copa que degustas.</p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="vinos_todos.jpg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
             <h2>Vino de Maracuyambola</h2>
-            <p>El Maracuyá, conocida también como granadilla al mezclar con la Carambola conocida como fruta estrella o averrhoa, se fusionan haciendo un detonante de sabor exquisito entre lo ácido y lo dulce. Sin duda que llamar al Maracuyá como fruta de la pasión hace que este vino sea el vino de la energía.</p>
-          </div> 
+            <p>El Maracuyá, conocida también como granadilla al mezclar con la Carambola conocida como fruta estrella o averrhoa, se fusionan haciendo un detonante de sabor exquisito entre lo ácido y
+              lo dulce. Sin duda que llamar al Maracuyá como fruta de la pasión hace que este vino sea el vino de la energía.</p>
+          </div>
         </div>
         <div class="carousel-item" data-bg="bot_maranon_copa.jpeg">
           <img src="images/bot_mandarina.jpeg" alt="botella_mandarina">
           <div class="product-description">
             <h2>Vino de Tamarindo</h2>
-            <p>El tamarindo o dátil de la India, la detonación de sabor que tiene el fruto al convertirlo en vino, fermentado por más de dos años hace que sea uno de nuestro Vinos con esencia tropical, rico para refrescar. Una delicia para introducirse a la generosidad que tiene la crianza del Vino de Tamarindo.</p>
-          </div> 
+            <p>El tamarindo o dátil de la India, la detonación de sabor que tiene el fruto al convertirlo en vino, fermentado por más de dos años hace que sea uno de nuestro Vinos con esencia
+              tropical, rico para refrescar. Una delicia para introducirse a la generosidad que tiene la crianza del Vino de Tamarindo.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -122,145 +155,165 @@
       <div class="container">
         <img src="images/foto_1920.jpeg" alt="Historia de la Empresa">
         <h1>Una tradición familiar desde 1970</h1>
-        <p>Según la historia familiar, en especial de la voz de mi tía MARTA LIDIA RENAULT, que ahora la atesoro en mi mente y corazón. Se dice que mi bisabuelo emigró de Bet-hala Palestina a Alemania, luego a Belice…</p>
-        <p>De Belice a Honduras: en Honduras mi bisabuelo Moisés, se quedó en Marcala, ahí se casó con la señorita Mirtala Bonilla, hija de Pedro H. Bonilla, Abogado y Notario de Marcala, quien fue luego presidente de la Corte Suprema de Justicia y Embajador Plenipotenciario ante el pueblo y gobierno de Nicaragua y Diputado por el Departamento de La Paz ante el Congreso Nacional.</p>
-        <p>Con Mirtala Bonilla tuvo 5 hijos, todos varones, Jacobo y Moisés que fallecieron antes que él y sin dejar hijos. También Juan, Abrahán y Nicolás. Somos de la descendencia de mi abuelo Juan y no mencionaré la cantidad de hijos que tuvo solo diré que tengo muchos tíos. Pero de esa generación esta mi Papá; Juan Pedro Nazar que mi bisabuelo deseó asentarlo con el nombre de Molotov… al ser muy extensivo la mayoría de las personas solo le llamaban Molo… y así es como aqui en la Villa de San Antonio solo se le conoce por Don Molo. Y la historia continua por Don Molo, se casa con doña Carmen Valladares, hija de padres luchadores y una abuela a toda madre que les enseño a trabajar haciendo las mejores rosquillas de ese tiempo… y es la historia que conocemos actualmente y que formamos parte de ella.</p>
-        <p>Alli en Marcala abrió un licoreria con Jorge Facussé, padre de Miguel Facussé, pero la cerraron ya que se trasladó a TEGUCIGALPA, por ese tiempo era un emporio comercial de granos, bebidas alcohólicas, panaderías, etc. El licor venía a lomo de mula, pero las mulas con su andar cadencioso lo derramaban, no es broma, hasta que llegaron los dos carros, tipo baronesa, dejaban las cajas de Tegus y luego se trasladaban hasta el mineral de Valle de Angeles a dejar abastecido los garrafones de Marco Aurelio Soto, gran beodo y flamante Presidente de Honduras en dos periodos. Y es así como comienza la historia de tener una licorera a producir vinos con los frutos locales…</p>
-        <p>Así que es cómo surge la idea de Vinos Artesanales Mi madre, posicionando nuestra marca en el mercado hondureño. Vinos Artesanales ¡Mi Madre! preserva una receta familiar que data de 1970, y que mi abuelo elaboraba desde años atrás manteniendo un producto nostálgico y artesanal...</p>
-        <p>Vinos Artesanales ¡Mi Madre! como futura empresa de este esquicito producto que guarda un legado familiar cobra aún más fuerza cuando unos de los puntos esenciales UNESCO, objetivos de desarrollo sostenible, específicamente el objetivo ocho manifiesta: Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente para todo, la Meta 8.9 de este mismos informe; trata sobre la necesidad de elaborar y poner en práctica políticas encaminadas a promover un turismo sostenible que cree puestos de trabajo y promueva la cultura y los productos locales.
+        <p>Según la historia familiar, en especial de la voz de mi tía MARTA LIDIA RENAULT, que ahora la atesoro en mi mente y corazón. Se dice que mi bisabuelo emigró de Bet-hala Palestina a
+          Alemania, luego a Belice…</p>
+        <p>De Belice a Honduras: en Honduras mi bisabuelo Moisés, se quedó en Marcala, ahí se casó con la señorita Mirtala Bonilla, hija de Pedro H. Bonilla, Abogado y Notario de Marcala, quien fue
+          luego presidente de la Corte Suprema de Justicia y Embajador Plenipotenciario ante el pueblo y gobierno de Nicaragua y Diputado por el Departamento de La Paz ante el Congreso Nacional.</p>
+        <p>Con Mirtala Bonilla tuvo 5 hijos, todos varones, Jacobo y Moisés que fallecieron antes que él y sin dejar hijos. También Juan, Abrahán y Nicolás. Somos de la descendencia de mi abuelo Juan
+          y no mencionaré la cantidad de hijos que tuvo solo diré que tengo muchos tíos. Pero de esa generación esta mi Papá; Juan Pedro Nazar que mi bisabuelo deseó asentarlo con el nombre de
+          Molotov… al ser muy extensivo la mayoría de las personas solo le llamaban Molo… y así es como aqui en la Villa de San Antonio solo se le conoce por Don Molo. Y la historia continua por Don
+          Molo, se casa con doña Carmen Valladares, hija de padres luchadores y una abuela a toda madre que les enseño a trabajar haciendo las mejores rosquillas de ese tiempo… y es la historia que
+          conocemos actualmente y que formamos parte de ella.</p>
+        <p>Alli en Marcala abrió un licoreria con Jorge Facussé, padre de Miguel Facussé, pero la cerraron ya que se trasladó a TEGUCIGALPA, por ese tiempo era un emporio comercial de granos, bebidas
+          alcohólicas, panaderías, etc. El licor venía a lomo de mula, pero las mulas con su andar cadencioso lo derramaban, no es broma, hasta que llegaron los dos carros, tipo baronesa, dejaban las
+          cajas de Tegus y luego se trasladaban hasta el mineral de Valle de Angeles a dejar abastecido los garrafones de Marco Aurelio Soto, gran beodo y flamante Presidente de Honduras en dos
+          periodos. Y es así como comienza la historia de tener una licorera a producir vinos con los frutos locales…</p>
+        <p>Así que es cómo surge la idea de Vinos Artesanales Mi madre, posicionando nuestra marca en el mercado hondureño. Vinos Artesanales ¡Mi Madre! preserva una receta familiar que data de 1970,
+          y que mi abuelo elaboraba desde años atrás manteniendo un producto nostálgico y artesanal...</p>
+        <p>Vinos Artesanales ¡Mi Madre! como futura empresa de este esquicito producto que guarda un legado familiar cobra aún más fuerza cuando unos de los puntos esenciales UNESCO, objetivos de
+          desarrollo sostenible, específicamente el objetivo ocho manifiesta: Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente
+          para todo, la Meta 8.9 de este mismos informe; trata sobre la necesidad de elaborar y poner en práctica políticas encaminadas a promover un turismo sostenible que cree puestos de trabajo y
+          promueva la cultura y los productos locales.
         </p>
-        <p>Actualmente Vinos Artesanales ¡Mi Madre! Tiene 11 sabores disponibles entre ellos; Mamón, Licha, Carambola, Marañón, Nance, Tamarindo, Piña, Carambolapiña, Maracuyambola, Mandarina, Mandariovos, Mora teniendo como meta lanzar entre diciembre y marzo 2022 el sabor Nance. De nuestra gama de sabores decidimos enviar cuatro de los sabores de mayor consumo en nuestra zona. Sin tener a menos el sabor exquisito que tienen los demás.</p>
+        <p>Actualmente Vinos Artesanales ¡Mi Madre! Tiene 11 sabores disponibles entre ellos; Mamón, Licha, Carambola, Marañón, Nance, Tamarindo, Piña, Carambolapiña, Maracuyambola, Mandarina,
+          Mandariovos, Mora teniendo como meta lanzar entre diciembre y marzo 2022 el sabor Nance. De nuestra gama de sabores decidimos enviar cuatro de los sabores de mayor consumo en nuestra zona.
+          Sin tener a menos el sabor exquisito que tienen los demás.</p>
         <a href="#" class="return-top">Regresar al inicio</a>
       </div>
     </section>
 
     <!-- Sección de Dónde Comprar -->
     <section id="compras" class="section-compras">
-      <div class="background-image" style="background-image: url('images/girl_box_far.jpeg');"></div> 
-        <div class="container">
-          <h1>¿Dónde Comprar?</h1>
-          <ul>
-            <li><strong>Restaurante Zazil:</strong> Hotel Honduras Maya, Tegucigalpa</li>
-            <li><strong>Casa Artesanal:</strong> City Mall, Tegucigalpa</li>
-            <li><strong>Abuela Chepita:</strong> Villa de San Antonio, Comayagua</li>
-            <li><strong>Atoles Alejandra:</strong> Carretera CA-5</li>
-            <li><strong>Chorros Termales Hotel Balneario y Restaurante:</strong> Flores, Villa de San Antonio, Comayagua</li>
-            <li><strong>Floristeria Danna:</strong> Barrio Torondón, Comayagua</li>
-            <li><strong>Restaurante La Baranda:</strong> Frente a Metro Plaza, Comayagua</li>
-            <li><strong>Repostería Kamilles:</strong> Haciendo postres y coctelería a base de nuestros vinos artesanales</li><br>
-            <li><strong>Para distribución visita nuestra sección: Contacto</strong></li>
-          </ul>
-          <h3>Te invitamos a que sigas consumiendo lo nuestro, Vinos Artesanales ¡Mi Madre!</h3>
-          <a href="#contacto" class="return-top">Ir a Contacto</a>
-        </div>
+      <div class="background-image" style="background-image: url('images/girl_box_far.jpeg');"></div>
+      <div class="container">
+        <h1>¿Dónde Comprar?</h1>
+        <ul>
+          <li><strong>Restaurante Zazil:</strong> Hotel Honduras Maya, Tegucigalpa</li>
+          <li><strong>Casa Artesanal:</strong> City Mall, Tegucigalpa</li>
+          <li><strong>Abuela Chepita:</strong> Villa de San Antonio, Comayagua</li>
+          <li><strong>Atoles Alejandra:</strong> Carretera CA-5</li>
+          <li><strong>Chorros Termales Hotel Balneario y Restaurante:</strong> Flores, Villa de San Antonio, Comayagua</li>
+          <li><strong>Floristeria Danna:</strong> Barrio Torondón, Comayagua</li>
+          <li><strong>Restaurante La Baranda:</strong> Frente a Metro Plaza, Comayagua</li>
+          <li><strong>Repostería Kamilles:</strong> Haciendo postres y coctelería a base de nuestros vinos artesanales</li><br>
+          <li><strong>Para distribución visita nuestra sección: Contacto</strong></li>
+        </ul>
+        <h3>Te invitamos a que sigas consumiendo lo nuestro, Vinos Artesanales ¡Mi Madre!</h3>
+        <a href="#contacto" class="return-top">Ir a Contacto</a>
+      </div>
     </section>
     <!-- Sección de Eventos -->
-  <section id="eventos" class="section-events">
-    <div class="container">
-      <h1>Eventos</h1>
-      
-      <!-- Eventos Próximos -->
-      <div class="event-container">
-        <div class="event upcoming-event">
-          <div class="event-image">
-            <img src="images/foro_turismo.png" alt="Evento próximo">
-          </div>
-          <div class="event-details">
-            <h2>Primer Foro de Turismo</h2>
-            <p>Vinos Artesanales ¡Mi Madre! estaremos participando en el Primer Foro de Turismo de la ciudad de Comayagua, a realizarse el día 28 de noviembre de 2024 en la Universidad José Cecilio del Valle - 8:00 am a 2:00 pm</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Eventos Recientes -->
-      <div class="event-container">
-        <div class="event recent-event">
-          <div class="event-details">
-            <h2>Expoferia Navideña</h2>
-            <p>Vinos Artesanales ¡Mi Madre! participó de la gran Expoferia Navideña</p>
-          </div>
-          <div class="event-image">
-            <img src="images/expoferia_navidena.png" alt="Evento reciente">
-          </div>
-        </div>
-      </div>
-      <a href="#" class="return-top" style="margin: 0 3ch;">Regresar al inicio</a>
-    </div>
-  </section>
+    <section id="eventos" class="section-events">
+      <div class="container">
+        <h1>Eventos</h1>
 
-  <!-- Sección de Restaurante -->
-  <section id="restaurante" class="section-restaurante">
-    <div class="container">
-      <h1>Restaurante La Cocina de ¡Mi Madre!</h1>
-      <h3>Si vino a la Villa y no tomó vino ¿A qué vino?</h3>
-      
-      <div class="menu-container">
-        <div class="menu-page">
-          <img src="images/menu_1.jpeg" alt="Menú Página 1">
-        </div>
-        <div class="menu-page">
-          <img src="images/menu_2.jpeg" alt="Menú Página 2">
-        </div>
-      </div>
-      
-      <a href="#" class="return-top">Regresar al inicio</a>
-    </div>
-  </section>
-  <!-- Sección de Contacto -->
-  <section id="contacto" class="section-contact">
-    <div class="container">
-      <h1>Contacto</h1>
-      
-      <div class="contact-container">
-
-        <!-- Columna del Mapa -->
-        <div class="contact-map">
-          <h3>¿Dónde encontrarnos?</h3>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.793629331981!2d-87.62075622854617!3d14.323416755478254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6581e41a066f8d%3A0x2cf75b302f624819!2sVinos%20Artesanales%20%C2%A1Mi%20Madre*21!5e0!3m2!1ses-419!2shn!4v1734886817430!5m2!1ses-419!2shn" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen="" loading="lazy" aria-hidden="false" tabindex="0" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <!-- Eventos Próximos -->
+        <div class="event-container">
+          <div class="event upcoming-event">
+            <div class="event-image">
+              <img src="images/foro_turismo.png" alt="Evento próximo">
+            </div>
+            <div class="event-details">
+              <h2>Primer Foro de Turismo</h2>
+              <p>Vinos Artesanales ¡Mi Madre! estaremos participando en el Primer Foro de Turismo de la ciudad de Comayagua, a realizarse el día 28 de noviembre de 2024 en la Universidad José Cecilio
+                del Valle - 8:00 am a 2:00 pm</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Columna del Formulario -->
-        <div class="contact-form">
-          <h3>¡Envíanos un mensaje!</h3>
-          <form>
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" required>
+        <!-- Eventos Recientes -->
+        <div class="event-container">
+          <div class="event recent-event">
+            <div class="event-details">
+              <h2>Expoferia Navideña</h2>
+              <p>Vinos Artesanales ¡Mi Madre! participó de la gran Expoferia Navideña</p>
             </div>
-            <div class="form-group">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" name="phone" required>
+            <div class="event-image">
+              <img src="images/expoferia_navidena.png" alt="Evento reciente">
             </div>
-            <div class="form-group">
-              <label for="email">Correo Electrónico</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <div class="form-buttons">
-              <button type="reset">Limpiar</button>
-              <button type="submit">Enviar</button>
-            </div>
-          </form>
-          <p>Correo Electrónico: <a href="mailto:empresa@correo.com">nerak1985razan@gmail.com</a></p>
-          <p>Teléfono: +504 9944-6104</p>
+          </div>
         </div>
+        <a href="#" class="return-top" style="margin: 0 3ch;">Regresar al inicio</a>
       </div>
-      <a href="#" class="return-top">Regresar al inicio</a>
-    </div>
-  </section>
+    </section>
+
+    <!-- Sección de Restaurante -->
+    <section id="restaurante" class="section-restaurante">
+      <div class="container">
+        <h1>Restaurante La Cocina de ¡Mi Madre!</h1>
+        <h3>Si vino a la Villa y no tomó vino ¿A qué vino?</h3>
+
+        <div class="menu-container">
+          <div class="menu-page">
+            <img src="images/menu_1.jpeg" alt="Menú Página 1">
+          </div>
+          <div class="menu-page">
+            <img src="images/menu_2.jpeg" alt="Menú Página 2">
+          </div>
+        </div>
+
+        <a href="#" class="return-top">Regresar al inicio</a>
+      </div>
+    </section>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="section-contact">
+      <div class="container">
+        <h1>Contacto</h1>
+
+        <div class="contact-container">
+
+          <!-- Columna del Mapa -->
+          <div class="contact-map">
+            <h3>¿Dónde encontrarnos?</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.793629331981!2d-87.62075622854617!3d14.323416755478254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6581e41a066f8d%3A0x2cf75b302f624819!2sVinos%20Artesanales%20%C2%A1Mi%20Madre*21!5e0!3m2!1ses-419!2shn!4v1734886817430!5m2!1ses-419!2shn"
+              width="100%" height="400" frameborder="0" style="border:0" allowfullscreen="" loading="lazy" aria-hidden="false" tabindex="0" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <!-- Columna del Formulario -->
+          <div class="contact-form">
+            <h3>¡Envíanos un mensaje!</h3>
+            <form id="form-contacto">
+              <input type="hidden" name="to_name" value="Nerak Razan">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <div class="form-buttons">
+                <button type="reset">Limpiar</button>
+                <button type="submit">Enviar</button>
+              </div>
+            </form>
+            <p>Correo Electrónico: <a href="mailto:empresa@correo.com">nerak1985razan@gmail.com</a></p>
+            <p>Teléfono: +504 9944-6104</p>
+          </div>
+        </div>
+        <a href="#" class="return-top">Regresar al inicio</a>
+      </div>
+    </section>
   </main>
   <div class="separator"></div>
   <footer class="footer">
-    <div class="social-icons"> 
-      <p>&copy; 2024 - Diseño por Sergio Castillo <a href="https://wa.me/32678821" target="_blank"><img src="/images/wa_color_icon.png" alt="whatsapp-logo"></a>y Wilfredo Espinal <a href="https://wa.me/95554023" target="_blank"><img src="/images/wa_color_icon.png" alt="whatsapp-logo"></a></p>
+    <div class="social-icons">
+      <p>&copy; 2024 - Diseño por Sergio Castillo <a href="https://wa.me/32678821" target="_blank"><img src="/images/wa_color_icon.png" alt="whatsapp-logo"></a>y Wilfredo Espinal <a
+          href="https://wa.me/95554023" target="_blank"><img src="/images/wa_color_icon.png" alt="whatsapp-logo"></a></p>
     </div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="slick/slick.min.js"></script>
-<script src="js/scripts.js"></script>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
-</html>
 
+</html>
